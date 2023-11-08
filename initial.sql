@@ -41,7 +41,7 @@ CREATE TABLE Ticketlog (
     Fname CHAR(35) NOT NULL,
     Lname CHAR(35) NOT NULL,
     Email VARCHAR(255) NOT NULL,
-    Descriptio CHAR(1000) NOT NULL,
+    Descriptio CHAR(255) NOT NULL,
     CONSTRAINT Ticket_PK PRIMARY KEY (TicketID)
 );
 
