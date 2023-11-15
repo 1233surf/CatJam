@@ -1,13 +1,8 @@
 function loginUser() {
-  const userType = document.getElementById("user-type").value;
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
-  const userTypes = ["user", "manager", "customerService", "moderator", "developer", "fulfiller", "creditor"];
-  if (!userTypes.includes(userType)) {
-    alert("Invalid user type. Please select a valid user type.");
-    return false;
-  }
-  //  test usernames and passwords for each user type
+
+  // Test usernames and passwords for each user
   const testUsers = {
     user: { username: "1", password: "1" },
     manager: { username: "2", password: "2" },
@@ -17,13 +12,18 @@ function loginUser() {
     fulfiller: { username: "6", password: "6" },
     creditor: { username: "7", password: "7" }
   };
-  if (testUsers[userType].username === username && testUsers[userType].password === password) {
+
+  // Find the matching user
+  const matchingUser = Object.keys(testUsers).find(user => testUsers[user].username === username && testUsers[user].password === password);
+
+  if (matchingUser) {
     alert("Login successful");
     hideLogin();
-    document.getElementById(`page${userTypes.indexOf(userType) + 2}`).classList.add("active");
+    document.getElementById(`page${Object.keys(testUsers).indexOf(matchingUser) + 2}`).classList.add("active");
   } else {
     alert("Invalid username or password. Please try again.");
   }
+
   return false;
 }
 
