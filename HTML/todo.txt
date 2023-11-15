@@ -1,0 +1,28 @@
+Manager:
+Add employee - Form
+Edit Employee - Form
+Delete Employee - Form & confirmation banner
+
+Customer Service:
+Edit customer - Form
+Delete customer - Form & confirmation banner
+View Tickets - container that holds information from create Ticket & a form for emailing the customer about the ticket progress/issues/ etc...
+
+Mod:
+Send Creditor Request - Form
+
+Dev:
+Download & upload (How?)
+
+Fulfiller
+
+Container that holds song request info & has 2 buttons that accept/deny requests
+
+Creditor
+Add Song Lyrics to form
+
+Mod/ user - Container for viewing fullfuilled requests & Browse Songs
+
+user - Make forms go away when other things show up
+
+LOOK INTO NODE/REACT.JS  
