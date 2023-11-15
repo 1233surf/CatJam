@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <iostream>
-//#include <mysqlx/xdevapi.h>
 
 #include "mysql_connection.h"
 #include <cppconn/driver.h>
