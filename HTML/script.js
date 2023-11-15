@@ -14,7 +14,7 @@ function loginUser() {
     fulfiller: { username: "6", password: "6" },
     creditor: { username: "7", password: "7" }
   };
-  if (testUsers[testUsers].username === username && testUsers[testUsers].password === password) {
+  if (testUsers.username === username && testUsers.password === password) {
     alert("Login successful");
     hideLogin();
     document.getElementById(`page${userTypes.indexOf(userType) + 2}`).classList.add("active");
