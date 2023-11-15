@@ -1,7 +1,7 @@
 CREATE TABLE CustomerInfo (
     CustomerID INT NOT NULL AUTO_INCREMENT,
     Firstname CHAR(30) NOT NULL,
-    LastName CHAR(15) NOT NULL,
+    LastName CHAR(40) NOT NULL,
     Email VARCHAR(255) NOT NULL,
     UserN VARCHAR(30) NOT NULL,
     Passw VARCHAR(30) NOT NULL,
