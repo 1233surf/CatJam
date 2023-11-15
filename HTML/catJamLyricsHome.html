@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Catjam Lyrics - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<table align="center">
+  <tr> <!-- Row1 -->
+    <td><img src="catJamming.gif" width="75" alt="Cat Jamming"></td>
+    <td></td>
+    <td id="topCell"><h1 vertical-align>Catjam Lyrics</h1></td>
+    <td></td>
+    <td><img src="catJamming.gif" width="75" alt="Cat Jamming"></td>
+  </tr>
+</table>
+<div id="page1" class="page active">
+  <div id="login-form">
+    <table align="center">
+      <tr>
+        <td>
+          <div class="login-container">
+            <h3>Login or Sign up</h3>
+              <form action=loginUser() method="post" onsubmit="return loginUser()">
+              <div class="user-type">
+                <label for="user-type">User Type:</label>
+                <select id="user-type" name="user-type">
+                  <option value="user">User</option>
+                  <option value="manager">Manager</option>
+                  <option value="customerService">Customer Service</option>
+                  <option value="moderator">Moderator</option>
+                  <option value="developer">Developer</option>
+                  <option value="fulfiller">Fulfiller</option>
+                  <option value="creditor">Creditor</option>
+                </select>
+              </div>
+              <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+              </div>
+              <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+              </div>
+              <div>
+                <input type="submit" value="Login" style="display: inline; margin-right: 139px; border: 1px solid #ccc;">
+                <a href="signup.html" class="button-link">Sign Up</a>
+              </div>
+            </form>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!-- Pages -->
+<div id="page2" class="page">
+  <h1 align="center">Welcome, User!</h1>
+  <table align="center">
+    <tr>
+      <td>
+        <button id="browseSongs">Browse Songs</button>
+        <!-- Send Query to c++ backend that shows all the songs from the table -->
+      </td>
+      <td>
+        <button id="searchSongsButton" onclick="toggleSearchBar()">Search Songs</button>
+        <!-- Search bar that sends a query to c++ backend -->
+      </td>
+      <td>
+        <button id="createTicketButton" onclick="showTicketForm()">Create Ticket</button>
+        <!-- Creates Form that allows user to make a support ticket -->
+      </td>
+      <td>
+        <button id="createSongRequest">Create Song Request</button>
+        <!-- Form that allows  user to create a song request -->
+      </td>
+      <td>
+        <button id="goToLogin">Go to Login</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- Page 2 Content -->
+
+<!-- Browse -->
+
+<!-- Search -->
+<div id="searchBarContainer" style="display: none;" align="center">
+    <input type="text" id="searchInput" placeholder="Search Songs">
+    <button onclick="searchSongs()">Search</button>
+</div>
+<!-- Support Ticket -->
+<div id="ticketForm">
+  <h2>Create a Support Ticket</h2>
+  <form id="supportTicketForm" onsubmit="return createTicket()">
+    <!-- Ticket form fields -->
+    <label for="ticketName">Name:</label>
+    <input type="text" id="ticketName" name="name" required>
+
+    <label for="ticketEmail">Email:</label>
+    <input type="email" id="ticketEmail" name="email" required>
+
+    <label for="ticketIssue">Describe the issue:</label>
+    <textarea id="ticketIssue" name="issue" rows="4" required></textarea>
+
+    <!-- Submit button -->
+    <button type="submit">Submit Ticket</button>
+  </form>
+</div>
+<!-- Song Request -->
+<div id="songRequestForm">
+  <h2>Create a Song Request</h2>
+  <form id="createSongRequestForm" onsubmit="return createSongRequest()">
+    <!-- Song Request form fields -->
+    <label for="requestName">Name:</label>
+    <input type="text" id="requestName" name="name" required>
+
+    <label for="requestEmail">Email:</label>
+    <input type="email" id="requestEmail" name="email" required>
+
+    <label for="songName">Song Name:</label>
+    <input type="text" id="songName" name="songName" required>
+
+    <!-- Submit button -->
+    <button type="submit">Submit Song Request</button>
+  </form>
+</div>
+<!--End Page 2 Content -->
+<div id="page3" class="page">
+  <h1 align="center">Welcome, Manager!</h1>
+  <table align="center">
+    <tr>
+      <td>
+        <button id="addEmployee">Add Employee</button>
+        <!-- Form that adds Employee information & sends it to backend -->
+      </td>
+      <td>
+        <button id="editEmployee">Edit Employee</button>
+        <!-- Form that changes Employee information & sends it to backend -->
+      </td>
+      <td>
+        <button id="deleteEmployee">Delete Employee</button>
+        <!-- Form that deletes Employee information & sends it to backend -->
+      </td>
+      <td>
+        <button id="goToLogin">Go to Login</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="page4" class="page">
+  <h1 align="center">Welcome, Customer Service!</h1>
+  <table align="center">
+    <tr>
+      <td>
+        <button id="editUserAccount">Edit Customer</button>
+      </td>
+      <td>
+        <button id="deleteUserAccount">Delete Customer</button>
+      </td>
+      <td>
+        <button id="viewTicket">View Tickets</button>
+      </td>
+      <td>
+        <button id="goToLogin">Go to Login</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="page5" class="page">
+  <h1 align="center">Welcome, Moderator!</h1>
+  <table align="center">
+    <tr>
+      <td>
+        <button id="viewFulfilledRequests">View Fulfilled Requests</button>
+      </td>
+      <td>
+        <button id="editSong">Edit Songs</button>
+      </td>
+      <td>
+        <button id="addSong">Add Songs</button>
+      </td>
+      <td>
+        <button id="deleteSong">Delete Songs</button>
+      </td>
+      <td>
+        <button id="requestSongInfo">Send Creditor Request</button>
+
+      </td>
+      <td>
+        <button id="goToLogin">Go to Login</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="page6" class="page">
+  <h1 align="center">Welcome, Developer!</h1>
+  <table align="center">
+    <tr>
+      <td>
+        <button id="downloadGUI">Download GUI</button>
+      </td>
+      <td>
+        <button id="uploadGUI">Upload GUI</button>
+      </td>
+      <td>
+        <button id="goToLogin">Go to Login</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="page7" class="page">
+  <h1 align="center">Welcome, Fulfiller!</h1>
+  <table align="center">
+    <tr>
+      <td>
+        <button id="viewCustomerSongRequests">Manage Customer Song Requests</button>
+        <!-- Menu that allows Fulfiller to accept or deny Customer Song requests -->
+      </td>
+      <td>
+        <button id="goToLogin">Go to Login</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="page8" class="page">
+  <h1 align="center">Welcome, Creditor!</h1>
+  <table align="center">
+    <tr>
+      <td>
+        <button id="viewModRequest">Mod Requested Song information</button>
+        <!-- Menu that allows Creditors to view a moderator request & send them the info -->
+      </td>
+      <td>
+        <button id="sendModInfo" onclick="showCreditorInfoForm()">Send Song Information</button>
+        <!-- Form that allows the Creditor to send the mod song info -->
+      </td>
+      <td>
+        <button id="goToLogin">Go to Login</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- Song Information Form -->
+  <form id="sendModInfoForm" onsubmit="return sendModInfo()">
+	  <h2>Send Song Information</h2>
+    <!-- Song Information form fields -->
+    <label for="creditorName">Creditor Name:</label>
+    <input type="text" id="creditorName" name="creditorName" required>
+
+    <label for="songArtist">Song Artist:</label>
+    <input type="text" id="songArtist" name="songArtist" required>
+
+    <label for="songName">Song Name:</label>
+    <input type="text" id="songName" name="songName" required>
+
+    <label for="songLength">Song Length:</label>
+    <input type="text" id="songLength" name="songLength" required>
+
+    <label for="accessPoints">Access Points:</label>
+    <input type="text" id="accessPoints" name="accessPoints" required>
+
+    <label for="accessLinks">Access Links:</label>
+    <input type="text" id="accessLinks" name="accessLinks" required>
+
+    <!-- Submit button -->
+    <button type="submit">Send Information</button>
+  </form>
+
+<script src="script.js"></script>
+</body>
+</html>
