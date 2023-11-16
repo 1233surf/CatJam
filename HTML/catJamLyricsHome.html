@@ -49,7 +49,7 @@
   <table align="center">
     <tr>
       <td>
-        <button id="browseSongs">Browse Songs</button>
+        <button id="browseSongs" onclick="toggleSongInfoTable()">Browse Songs</button>
         <!-- Send Query to c++ backend that shows all the songs from the table -->
       </td>
       <td>
@@ -73,13 +73,46 @@
 
 <!-- Page 2 Content -->
 
-<!-- Browse -->
-
 <!-- Search -->
 <div id="searchBarContainer" style="display: none;" align="center">
     <input type="text" id="searchInput" placeholder="Search Songs">
     <button onclick="searchSongs()">Search</button>
 </div>
+
+<!-- Browse -->
+
+<div id="songInfoContainer" style="display: flex; justify-content: center;">
+    <table border="1" style="margin: auto;">
+        <thead>
+            <tr>
+                <th>Song Name</th>
+                <th>Artist Name</th>
+                <th>Accessible Links</th>
+                <th>Song Lyrics</th>
+								<th>Song Length</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table content goes here -->
+            <tr>
+                <td>Song 1</td>
+                <td>Artist 1</td>
+                <td><a href="#">Link 1</a></td>
+                <td>Lyrics 1</td>
+								<td>Song Length 1</td>
+            </tr>
+            <tr>
+                <td>Song 2</td>
+                <td>Artist 2</td>
+                <td><a href="#">Link 2</a></td>
+                <td>Lyrics 2</td>
+								<td>Song Length 2</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</div>
+
 <!-- Support Ticket -->
 <div id="ticketForm">
   <h2>Create a Support Ticket</h2>
@@ -98,6 +131,7 @@
     <button type="submit">Submit Ticket</button>
   </form>
 </div>
+
 <!-- Song Request -->
 <div id="songRequestForm">
   <h2>Create a Song Request</h2>
@@ -116,7 +150,9 @@
     <button type="submit">Submit Song Request</button>
   </form>
 </div>
+
 <!--End Page 2 Content -->
+
 <div id="page3" class="page">
   <h1 align="center">Welcome, Manager!</h1>
   <table align="center">
@@ -144,19 +180,86 @@
   <table align="center">
     <tr>
       <td>
-        <button id="editUserAccount">Edit Customer</button>
+        <button id="editUserAccount" onclick="toggleForm()">Edit Customer</button>
       </td>
       <td>
-        <button id="deleteUserAccount">Delete Customer</button>
+        <button id="deleteUserAccount" onclick="toggleDeleteForm()">Delete Customer</button>
       </td>
       <td>
-        <button id="viewTicket">View Tickets</button>
+        <button id="viewTicket" onclick="toggleTicketTable()">View Tickets</button>
       </td>
       <td>
         <button id="goToLogin">Go to Login</button>
-      </td>
+      </td>		
     </tr>
   </table>
+	
+<!-- Page 4 Content -->
+
+
+<!-- Edit Acc -->
+<form id="editForm">
+    <label for="ticketNumber">Ticket Number:</label>
+    <input type="text" id="ticketNumber" name="ticketNumber" required>
+
+    <label for="userName">User's Name:</label>
+    <input type="text" id="userName" name="userName" required>
+
+    <label for="userEmail">User's Email:</label>
+    <input type="email" id="userEmail" name="userEmail" required>
+		
+
+    <label for="reason">Reason for Editing:</label>
+    <textarea id="reason" name="reason" rows="4" required></textarea>
+
+    <button type="submit">Submit</button>
+</form>
+<!-- Delete Acc -->
+<form id="deleteForm" style="display: none;">
+    <label for="ticketNumber">Ticket Number:</label>
+    <input type="text" id="ticketNumber" name="ticketNumber" required>
+
+    <label for="userName">User's Name:</label>
+    <input type="text" id="userName" name="userName" required>
+
+    <label for="userEmail">User's Email:</label>
+    <input type="email" id="userEmail" name="userEmail" required>
+
+    <label for="reason">Reason for Deleting:</label>
+    <textarea id="reason" name="reason" rows="4" required></textarea>
+
+    <button type="submit">Submit</button>
+</form>
+<!-- View Ticket -->
+
+
+<table id="ticketTable" style="display: none;" align="center">
+    <caption> <h2>Tickets</h2></caption>
+		<thead>
+				<tr>
+            <th>Ticket Number</th>
+            <th>User's Name</th>
+            <th>Content of Issue</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>Lorem ipsum dolor sit amet</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>Consectetur adipiscing elit</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+
+<!-- End of Page 4 Content -->
+	
 </div>
 <div id="page5" class="page">
   <h1 align="center">Welcome, Moderator!</h1>

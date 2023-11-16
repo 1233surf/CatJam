@@ -14,15 +14,19 @@ Send Creditor Request - Form
 Dev:
 Download & upload (How?)
 
-Fulfiller
-
+Fulfiller:
 Container that holds song request info & has 2 buttons that accept/deny requests
 
 Creditor
 Add Song Lyrics to form
 
-Mod/ user - Container for viewing fullfuilled requests & Browse Songs
-
-user - Make forms go away when other things show up
+Mod - Container for viewing fullfuilled requests & Browse Songs
 
 LOOK INTO NODE/REACT.JS  
+
+
+Things done:
+
+Made user buttons toggleable
+Created container for browse song
+Made basics for Customer Service
