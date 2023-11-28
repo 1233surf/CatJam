@@ -4,12 +4,13 @@
 #include <mysql/jdbc.h>
 
 using namespace std;
+ 
 
 const string server = "127.0.0.1"; // Update the server to your hostname 127.0.0.1
 const string username = "root"; //supriseme
 const string password = "456838Rg~"; // Update the password jake
 const int port = 3306; // Update the port
-
+/*
 void CreateTable(sql::Statement* stmt)
 {
 	try
@@ -32,7 +33,8 @@ void CreateTable(sql::Statement* stmt)
 		exit(1);
 	}
 }
-
+*/
+/*
 void PrintTable(sql::Statement* stmt, sql::ResultSet* res)
 {
 	try
@@ -55,7 +57,34 @@ void PrintTable(sql::Statement* stmt, sql::ResultSet* res)
 		exit(1);
 	}
 }
+*/
 
+void pullinfo(sql::Statement* stmt, sql::ResultSet* res)
+{
+	try 
+	{
+		
+		stmt->execute("USE sys");
+		res = stmt->executeQuery("SELECT * FROM employeeinfo, loglog");
+
+		while (res->next())
+		{
+			// Get values based on data types by accessing specific columns. syntax: ResultSetObject->getDataType(column_name)
+			cout << "USERID: " << res->getInt("EmployeeNumber") << endl;
+			cout << "Name: " << res->getString("EmployeeFirstName") << endl;
+			cout << "UserName: " << res->getString("logUserName") << endl;
+			cout << "Email: " << res->getString("logPassword") << endl;
+
+		}
+		
+	}
+	catch (sql::SQLException e)
+	{
+		cout << "Error message: " << e.what() << endl;
+		system("pause");
+		exit(1);
+	}
+}
 int main()
 {
 	sql::Driver* driver;
@@ -63,7 +92,10 @@ int main()
 	sql::Statement* stmt;
 	sql::PreparedStatement* pstmt;
 	sql::ResultSet* res{};
+	//string firstname, lastname, email;
 
+	//cout << "Input infotmation: "
+		//cin >> firstname;
 	try
 	{
 		driver = get_driver_instance();
@@ -79,12 +111,22 @@ int main()
 			con->close();
 			return 0;
 		}
+		
 		// Set schema to use for the connection
 		con->setSchema("sys");
 		// Create statement object for issuing commands to SQL Database
 		stmt = con->createStatement();
-		CreateTable(stmt);
-		PrintTable(stmt, res);
+		
+	}
+	
+	catch (sql::SQLException e)
+	{
+		cout << "Error message: " << e.what() << endl;
+		system("pause");
+		exit(1);
+	}
+	try {
+		pullinfo(stmt, res);
 	}
 	catch (sql::SQLException e)
 	{
@@ -92,8 +134,7 @@ int main()
 		system("pause");
 		exit(1);
 	}
-
 	// Clear any SQL created objects. Driver should be done automatically by the compiler.
-	delete con, stmt, res, pstmt;
+	//delete con, stmt, res, pstmt;
 	return 0;
 }
