@@ -1,0 +1,27 @@
+#ifndef EMPLOYEE_FUNCTIONS_H
+#define EMPLOYEE_FUNCTIONS_H
+#include <iostream>
+using namespace std;
+#include "Basic_Functions.h"
+
+class AddInfo {
+	//adds information about a song to the database
+};
+
+class ExchangeInfo {
+	//act like an email??? to exchange the information between the creditor and the moderator to input songs into the database
+};
+
+class ReviewRequests {
+	//the fulfiller can veiw requests sent by customers
+};
+
+class UpdataDatabase {
+	//updates any database
+};
+
+class ViewLogs {
+	//views the log database
+};
+
+#endif
