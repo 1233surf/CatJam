@@ -1,0 +1,237 @@
+#ifndef MANAGE_FUNCTIONS_H
+#define MANAGE_FUNCTIONS_H
+#include <iostream>
+using namespace std;
+//#include ".h"
+
+class ManageCusAccount {
+
+};
+
+class ManageEmpAccount {
+
+};
+
+class ManageGUI {
+
+};
+
+class ManageSongData {
+
+};
+
+class ManageTicketData {
+
+};
+
+class addCusAccount : public ManageCusAccount {
+private:
+	// private members here
+public:
+	// constructors
+	addCusAccount();
+	addCusAccount(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class editCusAccount : public ManageCusAccount {
+private:
+	// private members here
+public:
+	// constructors
+	editCusAccount();
+	editCusAccount(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class deleteCusAccount : public ManageCusAccount {
+private:
+	// private members here
+public:
+	// constructors
+	deleteCusAccount();
+	deleteCusAccount(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class addEmpAccount : public ManageEmpAccount {
+private:
+	// private members here
+public:
+	// constructors
+	addEmpAccount();
+	addEmpAccount(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class editEmpAccount : public ManageEmpAccount {
+private:
+	// private members here
+public:
+	// constructors
+	editEmpAccount();
+	editEmpAccount(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class deleteEmpAccount : public ManageEmpAccount {
+private:
+	// private members here
+public:
+	// constructors
+	deleteEmpAccount();
+	deleteEmpAccount(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class DownloadGUI : public ManageGUI {
+private:
+	// private members here
+public:
+	// constructors
+	DownloadGUI();
+	DownloadGUI(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class UploadGUI : public ManageGUI {
+private:
+	// private members here
+public:
+	// constructors
+	UploadGUI();
+	UploadGUI(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class addSongData : public ManageSongData {
+private:
+	// private members here
+public:
+	// constructors
+	addSongData();
+	addSongData(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class editSongData : public ManageSongData {
+private:
+	// private members here
+public:
+	// constructors
+	editSongData();
+	editSongData(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class deleteSongData : public ManageSongData {
+private:
+	// private members here
+public:
+	// constructors
+	deleteSongData();
+	deleteSongData(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class addTicketData : public ManageTicketData {
+private:
+	// private members here
+public:
+	// constructors
+	addTicketData();
+	addTicketData(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class editTicketData : public ManageTicketData {
+private:
+	// private members here
+public:
+	// constructors
+	editTicketData();
+	editTicketData(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+class deleteTicketData : public ManageTicketData {
+private:
+	// private members here
+public:
+	// constructors
+	deleteTicketData();
+	deleteTicketData(int param1, int param2);
+	// setters
+	void setParam1(int value);
+	void setParam2(int value);
+	// getters
+	int getParam1();
+	int getParam2();
+};
+
+#endif
