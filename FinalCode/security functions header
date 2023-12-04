@@ -3,12 +3,27 @@
 #include <iostream>
 using namespace std;
 
+#include <string>
+#include <regex>
+
 /*class AccessKey{
 
 };*/
 
-class AuthenticateUser {
-	//put password in again
+class Authenticator {
+public:
+	// Constructor
+	Authenticator();
+
+	// Destructor
+	~Authenticator();
+
+	// Method to check if the provided password is correct
+	bool authenticateUser(const std::string& enteredPassword);
+
+private:
+	// Replace this with a secure storage mechanism for the actual password
+	const std::string actualPassword = "your_actual_password";
 };
 
 class CheckCreds {
@@ -28,23 +43,43 @@ class DisplayWarning {
 
 	//if server is not connected 
 
-
-
 };
 
-class Encrypt {
-	//encrypt passwords
+class Encryptor {
+public:
+	// Constructor with the encryption key
+	Encryptor(int shift);
 
-	//probably just rearange the password
-	//probably just do the caesar method
+	// Destructor
+	~Encryptor();
 
+	// Function to encrypt a string
+	std::string encrypt(const std::string& input);
 
+private:
+	int shift; // Shift value for the Caesar cipher
+
+	// Helper function to shift a single character
+	char shiftChar(char c, int shift);
 };
 
-class SanatizeInput {
+namespace InputSanitizer {
+
+	// Function to sanitize HTML input
+	std::string sanitizeHTML(const std::string& input) {
+		// Regular expression to remove HTML tags
+		std::regex htmlTags("<.*?>");
+		std::string sanitized = std::regex_replace(input, htmlTags, "");
+
+		// You can add more sanitization steps as needed, such as handling special characters
+
+		return sanitized;
+	}
+}
+/*class SanatizeInput {
 
 	//idk how to do this
 
-};
+};*/
 
 #endif
