@@ -151,23 +151,14 @@
   </form>
 </div>
 
-<!--End Page 2 Content -->
+<!--Page 3 -->
 
 <div id="page3" class="page">
   <h1 align="center">Welcome, Manager!</h1>
   <table align="center">
     <tr>
       <td>
-        <button id="addEmployee">Add Employee</button>
-        <!-- Form that adds Employee information & sends it to backend -->
-      </td>
-      <td>
-        <button id="editEmployee">Edit Employee</button>
-        <!-- Form that changes Employee information & sends it to backend -->
-      </td>
-      <td>
-        <button id="deleteEmployee">Delete Employee</button>
-        <!-- Form that deletes Employee information & sends it to backend -->
+        <button id="manageEmployee" onclick="showEmployeeTable()">Manage Employee</button>
       </td>
       <td>
         <button id="goToLogin">Go to Login</button>
@@ -175,6 +166,48 @@
     </tr>
   </table>
 </div>
+
+<!--Page 3 Content -->
+<div class="table-wrapper">
+<table id="employeeTableContainer">
+  <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>Employee Name</th>
+      <th>Employee Email</th>
+      <th>Employee Phone Number</th>
+      
+    </tr>
+  </thead>
+  <tbody id="employeeTableBody">
+    <!-- Sample Employees -->
+    <tr>
+      <td>001</td>
+      <td>Jane Doe</td>
+      <td>jane.doe@example.com</td>
+      <td>123-456-7890</td>
+      <td><button onclick="editEmployee()">Edit</button></td>
+    </tr>
+    <tr>
+      <td>002</td>
+      <td>John Smith</td>
+      <td>john.smith@example.com</td>
+      <td>987-654-3210</td>
+      <td><button onclick="editEmployee()">Edit</button></td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="addEmployee()">Add Employee</button>
+        <button onclick="deleteEmployee()">Delete Employee</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<!--End Page 3 Content -->
+
+
+
 <div id="page4" class="page">
   <h1 align="center">Welcome, Customer Service!</h1>
   <table align="center">
@@ -260,6 +293,7 @@
 
 <!-- End of Page 4 Content -->
 	
+<!--  Page 5  -->
 </div>
 <div id="page5" class="page">
   <h1 align="center">Welcome, Moderator!</h1>
@@ -269,17 +303,13 @@
         <button id="viewFulfilledRequests">View Fulfilled Requests</button>
       </td>
       <td>
-        <button id="editSong">Edit Songs</button>
-      </td>
-      <td>
-        <button id="addSong">Add Songs</button>
-      </td>
-      <td>
-        <button id="deleteSong">Delete Songs</button>
+        <button id="manageSong">Manage Songs</button>
       </td>
       <td>
         <button id="requestSongInfo">Send Creditor Request</button>
-
+      </td>
+      <td>
+        <button id="requestedSongInfo">Creditor Information</button>
       </td>
       <td>
         <button id="goToLogin">Go to Login</button>
@@ -287,6 +317,124 @@
     </tr>
   </table>
 </div>
+
+<!-- Page 5 Content -->
+
+<!-- Fulfilled Requests -->
+<div class="table-wrapper">
+  <table id="fullfilledTable">
+    <thead>
+      <tr>
+        <th>Fulfilled Song Name</th>
+      </tr>
+    </thead>
+    <tbody id="fullfilledTableBody">
+      <!-- Songs -->
+      <tr>
+        <td>Song 3</td>
+      </tr>
+      <tr>
+        <td>Song 4</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Manage Songs -->
+
+<div id="modSongInfoContainer" style="display: flex; justify-content: center;">
+  <table border="1" style="margin: auto;">
+      <thead>
+          <tr>
+              <th>Song Name</th>
+              <th>Artist Name</th>
+              <th>Accessible Links</th>
+              <th>Song Lyrics</th>
+              <th>Song Length</th>
+          </tr>
+      </thead>
+      <tbody>
+          <!-- Table content goes here -->
+          <tr>
+              <td>Song 1</td>
+              <td>Artist 1</td>
+              <td><a href="#">Link 1</a></td>
+              <td>Lyrics 1</td>
+              <td>Song Length 1</td>
+              <td><button onclick="editSong()">Edit</button></td>
+          </tr>
+          <tr>
+              <td>Song 2</td>
+              <td>Artist 2</td>
+              <td><a href="#">Link 2</a></td>
+              <td>Lyrics 2</td>
+              <td>Song Length 2</td>
+              <td><button onclick="editSong()">Edit</button></td>
+          </tr>
+          <tr>
+            <td>
+              <button onclick="addSong()">Add Song</button>
+              <button onclick="deleteSong()">Delete Song</button>
+            </td>
+          </tr>
+          <!-- Add more rows as needed -->
+      </tbody>
+  </table>
+</div>
+
+<!-- Creditor Request-->
+
+<form id="modToCredSongForm">
+  <label for="moderatorName">Moderator Name:</label>
+  <input type="text" id="moderatorName" name="moderatorName" required>
+
+  <label for="songName">Song Name:</label>
+  <input type="text" id="songName" name="songName" required>
+
+  <button type="submit">Submit</button>
+</form>
+
+
+<!-- Requseted Song info-->
+
+<div id="CreditorsongInfoContainer" style="display: flex; justify-content: center;">
+  <table border="1" style="margin: auto;">
+      <thead>
+          <tr>
+              <th>Creditor Name</th>
+              <th>Song Name</th>
+              <th>Artist Name</th>
+              <th>Accessible Links</th>
+              <th>Song Lyrics</th>
+              <th>Song Length</th>
+          </tr>
+      </thead>
+      <tbody>
+          <!-- Table content goes here -->
+          <tr>
+              <th>Creditor 1</th>
+              <td>Song 3</td>
+              <td>Artist 3</td>
+              <td><a href="#">Link 3</a></td>
+              <td>Lyrics 3</td>
+              <td>Song Length 3</td>
+          </tr>
+          <tr>
+              <th>Creditor 2</th>
+              <td>Song 4</td>
+              <td>Artist 4</td>
+              <td><a href="#">Link 4</a></td>
+              <td>Lyrics 4</td>
+              <td>Song Length 4</td>
+          </tr>
+          <!-- Add more rows as needed -->
+      </tbody>
+  </table>
+</div>
+
+<!-- End of Page 5 Content -->
+
+
 <div id="page6" class="page">
   <h1 align="center">Welcome, Developer!</h1>
   <table align="center">
@@ -303,6 +451,11 @@
     </tr>
   </table>
 </div>
+
+<!-- End of Page 6 Content -->
+
+<!--  Page 7  -->
+
 <div id="page7" class="page">
   <h1 align="center">Welcome, Fulfiller!</h1>
   <table align="center">
@@ -317,6 +470,38 @@
     </tr>
   </table>
 </div>
+
+<!--  Page 7 Content -->
+
+<div class="table-wrapper">
+  <table id="fullFillerTable">
+    <thead>
+      <tr>
+        <th>Customer Song Requests - Name of Song</th>
+      </tr>
+    </thead>
+    <tbody id="fullFillerTableBody">
+      <!-- Songs -->
+      <tr>
+        <td>Song 5</td>
+        <td>
+          <button onclick="approveSong()">Approve Song</button>
+          <button onclick="denySong()">Deny Song</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Song 6</td>
+        <td>
+          <button onclick="approveSong()">Approve Song</button>
+          <button onclick="denySong()">Deny Song</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- End of Page 7 Content -->
+
 <div id="page8" class="page">
   <h1 align="center">Welcome, Creditor!</h1>
   <table align="center">
@@ -333,6 +518,31 @@
         <button id="goToLogin">Go to Login</button>
       </td>
     </tr>
+  </table>
+</div>
+
+<!-- viewModRequest -->
+
+<div id="creditorModTable">
+  <table border="1" style="margin: auto;">
+    <thead>
+      <tr>
+        <th>Moderator Name</th>
+        <th>Song Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Table content goes here -->
+      <tr>
+        <td>Mod 1</td>
+        <td>Song 5</td>
+      </tr>
+      <tr>
+        <td>Mod 2</td>
+        <td>Song 6</td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
   </table>
 </div>
 
