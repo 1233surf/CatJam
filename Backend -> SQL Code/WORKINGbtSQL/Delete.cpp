@@ -26,7 +26,7 @@ void Updateinfo(sql::Statement* stmt, sql::ResultSet* res)
 	{
 
 		stmt->execute("USE sys");
-		res = stmt->executeQuery(" UPDATE customerinfo SET CustomerID = '2', CustomerFirstName = 'New', CustomerEmail = 'New@Gmail.com', CustomerUserName = 'HII', CustomerPassword = 'NewP'  Where CustomerID = '2'");
+		res = stmt->executeQuery(" DELETE FROM customerinfo");
 		//res = stmt->executeQuery("INSERT INTO customerinfo (CustomerID, CustomerFirstName, CustomerLastName, CustomerEmail, CustomerUserName, CustomerPassword) VALUES ('1', 'Rachel' , 'Parker', 'IloveThisClass@JK.com', 'FakeName', 'FakePassword')");
 
 	}
@@ -43,7 +43,7 @@ void updateinfo1(sql::Statement* stmt, sql::ResultSet* res)
 	{
 
 		stmt->execute("USE sys");
-		res = stmt->executeQuery(" UPDATE employeeinfo SET EmployeeNumber = '2', EmployeeFirstName = 'New', EmployeeLastName = 'NewTo', EmployeeEmail = 'NewEmail@Gmail.com', EmployeeUserName = 'Something', EmployeePassword = 'Shhh' Where EmployeeNumber = '1'");
+		res = stmt->executeQuery(" DELETE FROM employeeinfo");
 		//res = stmt->executeQuery("INSERT INTO employeeinfo (EmployeeNumber, EmployeeFirstName, EmployeeLastName, EmployeeEmail, EmployeeUserName, EmployeePassword) VALUES ('1', 'Aaron' , 'Loveland', 'Imtired@reallytired', 'NameisFake', 'PasswordIsTo')");
 	}
 	catch (sql::SQLException e)
@@ -59,7 +59,7 @@ void updateinfo2(sql::Statement* stmt, sql::ResultSet* res)
 	{
 
 		stmt->execute("USE sys");
-		res = stmt->executeQuery(" UPDATE rools SET RoolsID = '2', RoolsName = 'Creditor', RoolsEmail = 'Newrools@gmail.com', RoolsQeury = 'yes' Where RoolsID = '2'");
+		res = stmt->executeQuery(" DELETE FROM executeQuery");
 		//res = stmt->executeQuery("INSERT INTO rools (RoolsID, RoolsName, RoolsEmail, RoolsQeury) VALUES ('1', 'Customer' , 'Rools@email.com', 'no')");
 	}
 	catch (sql::SQLException e)
@@ -75,7 +75,7 @@ void updateinfo3(sql::Statement* stmt, sql::ResultSet* res)
 	{
 
 		stmt->execute("USE sys");
-		res = stmt->executeQuery(" UPDATE songinfo SET SongInfoID = '3' Where SongInfoID = '1'");
+		res = stmt->executeQuery(" DELETE FROM songinfo");
 		//res = stmt->executeQuery("INSERT INTO songinfo (SongInfoID, SongInfoName, SongInfoLyric, SongAlbum, SongArtist, SongProducer) VALUES ('1', 'Binding Lights' , 'Lyrics', 'The Weekend', 'The Weekend', 'IDK')");
 
 	}
