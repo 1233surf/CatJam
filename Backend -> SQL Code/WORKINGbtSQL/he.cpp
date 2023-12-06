@@ -35,8 +35,6 @@ void addinfo1(sql::Statement* stmt, sql::ResultSet* res)
 
 		stmt->execute("USE sys");
 		res = stmt->executeQuery("INSERT INTO employeeinfo (EmployeeNumber, EmployeeFirstName, EmployeeLastName, EmployeeEmail, EployeeUserName, EmployeePassword) VALUES ('1', 'Aaron' , 'Loveland', 'Imtired@reallytired', 'NameisFake', 'PasswordIsTo')");
-		res = stmt->executeQuery("INSERT INTO rools (RoolsID, RoolsName, RoolsEmail, RoolsQeury) VALUES ('1', 'Customer' , 'Rools@email.com', 'no')");
-		res = stmt->executeQuery("INSERT INTO songinfo (SongInfoID, SongInfoName, SongInfoLyric, SongAlbum, SongArtist, SongProducer) VALUES ('1', 'Binding Lights' , 'Lyrics', 'The Weekend', 'The Weekend', 'IDK')");
 
 	}
 	catch (sql::SQLException e)
@@ -53,7 +51,6 @@ void addinfo2(sql::Statement* stmt, sql::ResultSet* res)
 
 		stmt->execute("USE sys");
 		res = stmt->executeQuery("INSERT INTO rools (RoolsID, RoolsName, RoolsEmail, RoolsQeury) VALUES ('1', 'Customer' , 'Rools@email.com', 'no')");
-		res = stmt->executeQuery("INSERT INTO songinfo (SongInfoID, SongInfoName, SongInfoLyric, SongAlbum, SongArtist, SongProducer) VALUES ('1', 'Binding Lights' , 'Lyrics', 'The Weekend', 'The Weekend', 'IDK')");
 
 	}
 	catch (sql::SQLException e)
