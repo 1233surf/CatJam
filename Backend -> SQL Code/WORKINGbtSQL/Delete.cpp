@@ -1,3 +1,11 @@
+/*
+DELETE FROM customerinfo WHERE CustomerID = '1';
+DELETE FROM employeeinfo WHERE EmployeeNumber = '1';
+DELETE FROM rools WHERE RoolsID = '1';
+DELETE FROM songinfo WHERE SongInfoID = '1';
+	*/
+
+
 #include <stdlib.h>
 #include <iostream>
 #include <string>
