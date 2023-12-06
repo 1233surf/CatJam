@@ -29,7 +29,7 @@ void Updateinfo(sql::Statement* stmt, sql::ResultSet* res)
 	}
 
 }
-void addinfo1(sql::Statement* stmt, sql::ResultSet* res)
+void updateinfo1(sql::Statement* stmt, sql::ResultSet* res)
 {
 	try
 	{
@@ -45,7 +45,7 @@ void addinfo1(sql::Statement* stmt, sql::ResultSet* res)
 	}
 
 }
-void addinfo2(sql::Statement* stmt, sql::ResultSet* res)
+void updateinfo2(sql::Statement* stmt, sql::ResultSet* res)
 {
 	try
 	{
@@ -61,7 +61,7 @@ void addinfo2(sql::Statement* stmt, sql::ResultSet* res)
 	}
 
 }
-void addinfo3(sql::Statement* stmt, sql::ResultSet* res)
+void updateinfo3(sql::Statement* stmt, sql::ResultSet* res)
 {
 	try
 	{
@@ -126,9 +126,9 @@ int main()
 	{
 
 		Updateinfo(stmt, res);
-		//addinfo1(stmt, res);
-		//addinfo2(stmt, res);
-		//addinfo3(stmt, res);
+		updateinfo1(stmt, res);
+		updateinfo2(stmt, res);
+		updateinfo3(stmt, res);
 
 
 
