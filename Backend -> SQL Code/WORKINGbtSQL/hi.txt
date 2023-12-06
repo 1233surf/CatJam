@@ -1,0 +1,100 @@
+#include <stdlib.h>
+#include <iostream>
+#include <string>
+//#include<format>
+
+#include <mysql/jdbc.h>
+
+using namespace std;
+
+const string server = "127.0.0.1"; // Update the server to your hostname 127.0.0.1
+const string username = "root"; //supriseme
+const string password = "456838Rg~"; // Update the password jake
+const int port = 3306; // Update the port
+
+void addinfo(sql::Statement* stmt, sql::ResultSet* res)
+{
+	try
+	{
+
+		stmt->execute("USE sys");
+		res = stmt->executeQuery("INSERT INTO customerinfo (CustomerID, CustomerFirstName, CustomerLastName, CustomerEmail, CustomerUserName, CustomerPassword) VALUES ('29, 'hi' , 'hi', 'hi', 'hi', 'hi')");
+
+		/*while (res->next())
+		{
+			// Get values based on data types by accessing specific columns. syntax: ResultSetObject->getDataType(column_name)
+			cout << "USERID: " << res->getInt("EmployeeNumber") << endl;
+			cout << "Name: " << res->getString("EmployeeFirstName") << endl;
+			cout << "UserName: " << res->getString("logUserName") << endl;
+			cout << "Email: " << res->getString("logPassword") << endl;
+
+		}*/
+
+	}
+	catch (sql::SQLException e)
+	{
+		cout << "Error message: " << e.what() << endl;
+		system("pause");
+		exit(1);
+	}
+
+}
+int main()
+{
+	sql::Driver* driver;
+	sql::Connection* con;
+	sql::Statement* stmt;
+	sql::PreparedStatement* pstmt;
+	sql::ResultSet* res{};
+	//int userInputID;
+	string  userInputFN, userInputLN, userInputEM, userInputUS, userInputPW;
+	//string firstname, lastname, email;
+
+	//cout << "Input infotmation: "
+		//cin >> firstname;
+
+	try
+	{
+		driver = get_driver_instance();
+		con = driver->connect(server, username, password);
+		// Check if the connection is active and valid
+		if (con->isValid())
+		{
+			cout << "Connection successful\n";
+		}
+		else
+		{
+			// Close connection if it is invalid
+			con->close();
+			return 0;
+		}
+
+		// Set schema to use for the connection
+		con->setSchema("sys");
+		// Create statement object for issuing commands to SQL Database
+		stmt = con->createStatement();
+
+	}
+
+	catch (sql::SQLException e)
+	{
+		cout << "Error message: " << e.what() << endl;
+		system("pause");
+		exit(1);
+	}
+	if (con->isValid())
+	{
+		try {
+			addinfo(stmt, res);
+		}
+		catch (sql::SQLException e)
+		{
+			cout << "Error message: " << e.what() << endl;
+			system("pause");
+			exit(1);
+		}
+	}
+	// Clear any SQL created objects. Driver should be done automatically by the compiler.
+	//delete con, stmt, res, pstmt;
+	return 0;
+}
