@@ -18,7 +18,7 @@ void Updateinfo(sql::Statement* stmt, sql::ResultSet* res)
 	{
 
 		stmt->execute("USE sys");
-		res = stmt->executeQuery(" UPDATE customerinfo SET CustomerID = '2', CustomerFirstName = 'New', CustomerEmail = 'New@Gmail.com', CustomerUserName = 'HII', CustomerPassword = 'NewP'  Where CustomerID = '2'");
+		res = stmt->executeQuery(" UPDATE customerinfo SET CustomerID = '2', CustomerFirstName = 'New', CustomerEmail = 'New@Gmail.com', CustomerUserName = 'HII', CustomerPassword = 'NewP'  Where CustomerID = '1'");
 		//res = stmt->executeQuery("INSERT INTO customerinfo (CustomerID, CustomerFirstName, CustomerLastName, CustomerEmail, CustomerUserName, CustomerPassword) VALUES ('1', 'Rachel' , 'Parker', 'IloveThisClass@JK.com', 'FakeName', 'FakePassword')");
 
 	}
@@ -51,7 +51,7 @@ void updateinfo2(sql::Statement* stmt, sql::ResultSet* res)
 	{
 
 		stmt->execute("USE sys");
-		res = stmt->executeQuery(" UPDATE rools SET RoolsID = '2', RoolsName = 'Creditor', RoolsEmail = 'Newrools@gmail.com', RoolsQeury = 'yes' Where RoolsID = '2'");
+		res = stmt->executeQuery(" UPDATE rools SET RoolsID = '2', RoolsName = 'Creditor', RoolsEmail = 'Newrools@gmail.com', RoolsQeury = 'yes' Where RoolsID = '1'");
 		//res = stmt->executeQuery("INSERT INTO rools (RoolsID, RoolsName, RoolsEmail, RoolsQeury) VALUES ('1', 'Customer' , 'Rools@email.com', 'no')");
 	}
 	catch (sql::SQLException e)
