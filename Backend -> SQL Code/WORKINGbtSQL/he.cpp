@@ -19,7 +19,7 @@ void addinfo(sql::Statement* stmt, sql::ResultSet* res)
 
 		stmt->execute("USE sys");
 		res = stmt->executeQuery("INSERT INTO customerinfo (CustomerID, CustomerFirstName, CustomerLastName, CustomerEmail, CustomerUserName, CustomerPassword) VALUES ('1', 'Rachel' , 'Parker', 'IloveThisClass@JK.com', 'FakeName', 'FakePassword')");
-		cout << "hello';
+		cout << "hello";
 		res = stmt->executeQuery("INSERT INTO employeeinfo (EmployeeNumber, EmployeeFirstName, EmployeeLastName, EmployeeEmail, EployeeUserName, EmployeePassword) VALUES ('1', 'Aaron' , 'Loveland', 'Imtired@reallytired', 'NameisFake', 'PasswordIsTo')");
 		res = stmt->executeQuery("INSERT INTO rools (RoolsID, RoolsName, RoolsEmail, RoolsQeury) VALUES ('1', 'Customer' , 'Rools@email.com', 'no')");
 		res = stmt->executeQuery("INSERT INTO songinfo (SongInfoID, SongInfoName, SongInfoLyric, SongAlbum, SongArtist, SongProducer) VALUES ('1', 'Binding Lights' , 'Lyrics', 'The Weekend', 'The Weekend', 'IDK')");
@@ -97,16 +97,11 @@ int main()
 	}
 	if (con->isValid())
 	{
-		try {
+
 			addinfo(stmt, res);
 			addinfo1(stmt, res);
-		}
-		catch (sql::SQLException e)
-		{
-			cout << "Error message: " << e.what() << endl;
-			system("pause");
-			exit(1);
-		}
+
+
 	}
 	// Clear any SQL created objects. Driver should be done automatically by the compiler.
 	//delete con, stmt, res, pstmt;
