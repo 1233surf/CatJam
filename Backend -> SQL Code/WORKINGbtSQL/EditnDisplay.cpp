@@ -12,14 +12,14 @@ const string username = "root"; //supriseme
 const string password = "456838Rg~"; // Update the password jake
 const int port = 3306; // Update the port
 
-void addinfo(sql::Statement* stmt, sql::ResultSet* res)
+void Updateinfo(sql::Statement* stmt, sql::ResultSet* res)
 {
 	try
 	{
 
 		stmt->execute("USE sys");
-		res = stmt->executeQuery(" UPDATE customerinfo SET CustomerID = '2' Where CustomerID = '2'")
-		res = stmt->executeQuery("INSERT INTO customerinfo (CustomerID, CustomerFirstName, CustomerLastName, CustomerEmail, CustomerUserName, CustomerPassword) VALUES ('1', 'Rachel' , 'Parker', 'IloveThisClass@JK.com', 'FakeName', 'FakePassword')");
+		res = stmt->executeQuery(" UPDATE customerinfo SET CustomerID = '2', CustomerFirstName = 'New', CustomerEmail = 'New@Gmail.com', CustomerUserName = 'HII', CustomerPassword = 'NewP'  Where CustomerID = '1'");
+		//res = stmt->executeQuery("INSERT INTO customerinfo (CustomerID, CustomerFirstName, CustomerLastName, CustomerEmail, CustomerUserName, CustomerPassword) VALUES ('1', 'Rachel' , 'Parker', 'IloveThisClass@JK.com', 'FakeName', 'FakePassword')");
 
 	}
 	catch (sql::SQLException e)
@@ -128,10 +128,10 @@ int main()
 	if (con->isValid())
 	{
 
-		addinfo(stmt, res);
-		addinfo1(stmt, res);
-		addinfo2(stmt, res);
-		addinfo3(stmt, res);
+		Updateinfo(stmt, res);
+		//addinfo1(stmt, res);
+		//addinfo2(stmt, res);
+		//addinfo3(stmt, res);
 
 
 
