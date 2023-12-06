@@ -18,6 +18,7 @@ void addinfo(sql::Statement* stmt, sql::ResultSet* res)
 	{
 
 		stmt->execute("USE sys");
+		res = stmt->executeQuery(" UPDATE customerinfo SET CustomerID = '2' Where CustomerID = '2'")
 		res = stmt->executeQuery("INSERT INTO customerinfo (CustomerID, CustomerFirstName, CustomerLastName, CustomerEmail, CustomerUserName, CustomerPassword) VALUES ('1', 'Rachel' , 'Parker', 'IloveThisClass@JK.com', 'FakeName', 'FakePassword')");
 
 	}
@@ -28,6 +29,7 @@ void addinfo(sql::Statement* stmt, sql::ResultSet* res)
 	}
 
 }
+/*
 void addinfo1(sql::Statement* stmt, sql::ResultSet* res)
 {
 	try
@@ -79,6 +81,7 @@ void addinfo3(sql::Statement* stmt, sql::ResultSet* res)
 	}
 
 }
+*/
 int main()
 {
 	sql::Driver* driver;
