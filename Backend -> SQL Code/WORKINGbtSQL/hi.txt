@@ -19,19 +19,10 @@ void addinfo(sql::Statement* stmt, sql::ResultSet* res)
 
 		stmt->execute("USE sys");
 		res = stmt->executeQuery("INSERT INTO customerinfo (CustomerID, CustomerFirstName, CustomerLastName, CustomerEmail, CustomerUserName, CustomerPassword) VALUES ('1', 'Rachel' , 'Parker', 'IloveThisClass@JK.com', 'FakeName', 'FakePassword')");
+		cout << "hello';
 		res = stmt->executeQuery("INSERT INTO employeeinfo (EmployeeNumber, EmployeeFirstName, EmployeeLastName, EmployeeEmail, EployeeUserName, EmployeePassword) VALUES ('1', 'Aaron' , 'Loveland', 'Imtired@reallytired', 'NameisFake', 'PasswordIsTo')");
 		res = stmt->executeQuery("INSERT INTO rools (RoolsID, RoolsName, RoolsEmail, RoolsQeury) VALUES ('1', 'Customer' , 'Rools@email.com', 'no')");
 		res = stmt->executeQuery("INSERT INTO songinfo (SongInfoID, SongInfoName, SongInfoLyric, SongAlbum, SongArtist, SongProducer) VALUES ('1', 'Binding Lights' , 'Lyrics', 'The Weekend', 'The Weekend', 'IDK')");
-
-		/*while (res->next())
-		{
-			// Get values based on data types by accessing specific columns. syntax: ResultSetObject->getDataType(column_name)
-			cout << "USERID: " << res->getInt("EmployeeNumber") << endl;
-			cout << "Name: " << res->getString("EmployeeFirstName") << endl;
-			cout << "UserName: " << res->getString("logUserName") << endl;
-			cout << "Email: " << res->getString("logPassword") << endl;
-
-		}*/
 
 	}
 	catch (sql::SQLException e)
