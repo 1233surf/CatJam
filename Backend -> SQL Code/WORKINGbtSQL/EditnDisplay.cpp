@@ -35,7 +35,7 @@ void updateinfo1(sql::Statement* stmt, sql::ResultSet* res)
 	{
 
 		stmt->execute("USE sys");
-		res = stmt->executeQuery(" UPDATE employeenfo SET EmployeeNumber = '2', EmployeeFirstName = 'New', EmployeeLastName = 'NewTo', EmployeeEmail = 'NewEmail@Gmail.com', EmployeeUserName = 'Something', EmployeePassword = 'Shhh'");
+		res = stmt->executeQuery(" UPDATE employeeinfo SET EmployeeNumber = '2', EmployeeFirstName = 'New', EmployeeLastName = 'NewTo', EmployeeEmail = 'NewEmail@Gmail.com', EmployeeUserName = 'Something', EmployeePassword = 'Shhh'");
 		//res = stmt->executeQuery("INSERT INTO employeeinfo (EmployeeNumber, EmployeeFirstName, EmployeeLastName, EmployeeEmail, EmployeeUserName, EmployeePassword) VALUES ('1', 'Aaron' , 'Loveland', 'Imtired@reallytired', 'NameisFake', 'PasswordIsTo')");
 	}
 	catch (sql::SQLException e)
@@ -51,7 +51,7 @@ void updateinfo2(sql::Statement* stmt, sql::ResultSet* res)
 	{
 
 		stmt->execute("USE sys");
-		res = stmt->executeQuery(" UPDATE rools SET RoolsID = '2', RoolsName = 'Creditor', RoolsEmail = 'Newrools@gmail.com', RoolsQuery = 'yes'");
+		res = stmt->executeQuery(" UPDATE rools SET RoolsID = '2', RoolsName = 'Creditor', RoolsEmail = 'Newrools@gmail.com', RoolsQeury = 'yes'");
 		//res = stmt->executeQuery("INSERT INTO rools (RoolsID, RoolsName, RoolsEmail, RoolsQeury) VALUES ('1', 'Customer' , 'Rools@email.com', 'no')");
 	}
 	catch (sql::SQLException e)
@@ -67,7 +67,7 @@ void updateinfo3(sql::Statement* stmt, sql::ResultSet* res)
 	{
 
 		stmt->execute("USE sys");
-		res = stmt->executeQuery(" UPDATE songinfo SET SongInfoID = '2'");
+		res = stmt->executeQuery(" UPDATE songinfo SET SongInfoID = '3'");
 		//res = stmt->executeQuery("INSERT INTO songinfo (SongInfoID, SongInfoName, SongInfoLyric, SongAlbum, SongArtist, SongProducer) VALUES ('1', 'Binding Lights' , 'Lyrics', 'The Weekend', 'The Weekend', 'IDK')");
 
 	}
