@@ -51,7 +51,7 @@ void updateinfo2(sql::Statement* stmt, sql::ResultSet* res)
 	{
 
 		stmt->execute("USE sys");
-		res = stmt->executeQuery(" UPDATE rools SET RoolsID = '2', RoolsName = 'Creditor', RoolsEmail = 'Newrools@gmail.com', RoolsQeury = 'yes' Where RoolsID = '1'");
+		res = stmt->executeQuery(" UPDATE rools SET RoolsID = '2', RoolsName = 'Creditor', RoolsEmail = 'Newrools@gmail.com', RoolsQeury = 'yes' Where RoolsID = '2'");
 		//res = stmt->executeQuery("INSERT INTO rools (RoolsID, RoolsName, RoolsEmail, RoolsQeury) VALUES ('1', 'Customer' , 'Rools@email.com', 'no')");
 	}
 	catch (sql::SQLException e)
