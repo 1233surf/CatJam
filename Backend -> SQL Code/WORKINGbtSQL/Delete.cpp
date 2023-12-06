@@ -20,7 +20,7 @@ const string username = "root"; //supriseme
 const string password = "456838Rg~"; // Update the password jake
 const int port = 3306; // Update the port
 
-void Updateinfo(sql::Statement* stmt, sql::ResultSet* res)
+void Deleteinfo(sql::Statement* stmt, sql::ResultSet* res)
 {
 	try
 	{
@@ -37,7 +37,7 @@ void Updateinfo(sql::Statement* stmt, sql::ResultSet* res)
 	}
 
 }
-void updateinfo1(sql::Statement* stmt, sql::ResultSet* res)
+void Deleteinfo1(sql::Statement* stmt, sql::ResultSet* res)
 {
 	try
 	{
@@ -53,7 +53,7 @@ void updateinfo1(sql::Statement* stmt, sql::ResultSet* res)
 	}
 
 }
-void updateinfo2(sql::Statement* stmt, sql::ResultSet* res)
+void Deleteinfo2(sql::Statement* stmt, sql::ResultSet* res)
 {
 	try
 	{
@@ -69,7 +69,7 @@ void updateinfo2(sql::Statement* stmt, sql::ResultSet* res)
 	}
 
 }
-void updateinfo3(sql::Statement* stmt, sql::ResultSet* res)
+void Deleteinfo3(sql::Statement* stmt, sql::ResultSet* res)
 {
 	try
 	{
@@ -133,10 +133,10 @@ int main()
 	if (con->isValid())
 	{
 
-		Updateinfo(stmt, res);
-		updateinfo1(stmt, res);
-		updateinfo2(stmt, res);
-		updateinfo3(stmt, res);
+		Deleteinfo(stmt, res);
+		Deleteinfo1(stmt, res);
+		Deleteinfo2(stmt, res);
+		Deleteinfo3(stmt, res);
 
 
 
