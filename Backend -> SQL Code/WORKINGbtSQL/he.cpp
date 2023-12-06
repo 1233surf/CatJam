@@ -23,7 +23,7 @@ void addinfo(sql::Statement* stmt, sql::ResultSet* res)
 	}
 	catch (sql::SQLException e)
 	{
-		cout << "Error message: " << e.what() << endl;
+		cout << "CustomerInfo Error message: " << e.what() << endl;
 
 	}
 
@@ -35,11 +35,13 @@ void addinfo1(sql::Statement* stmt, sql::ResultSet* res)
 
 		stmt->execute("USE sys");
 		res = stmt->executeQuery("INSERT INTO employeeinfo (EmployeeNumber, EmployeeFirstName, EmployeeLastName, EmployeeEmail, EmployeeUserName, EmployeePassword) VALUES ('1', 'Aaron' , 'Loveland', 'Imtired@reallytired', 'NameisFake', 'PasswordIsTo')");
+		res = stmt->executeQuery("INSERT INTO rools (RoolsID, RoolsName, RoolsEmail, RoolsQeury) VALUES ('1', 'Customer' , 'Rools@email.com', 'no')");
+		res = stmt->executeQuery("INSERT INTO songinfo (SongInfoID, SongInfoName, SongInfoLyric, SongAlbum, SongArtist, SongProducer) VALUES ('1', 'Binding Lights' , 'Lyrics', 'The Weekend', 'The Weekend', 'IDK')");
 
 	}
 	catch (sql::SQLException e)
 	{
-		cout << "Error message: " << e.what() << endl;
+		cout << "EmployeeInfo Error message: " << e.what() << endl;
 
 	}
 
@@ -51,11 +53,12 @@ void addinfo2(sql::Statement* stmt, sql::ResultSet* res)
 
 		stmt->execute("USE sys");
 		res = stmt->executeQuery("INSERT INTO rools (RoolsID, RoolsName, RoolsEmail, RoolsQeury) VALUES ('1', 'Customer' , 'Rools@email.com', 'no')");
+		res = stmt->executeQuery("INSERT INTO songinfo (SongInfoID, SongInfoName, SongInfoLyric, SongAlbum, SongArtist, SongProducer) VALUES ('1', 'Binding Lights' , 'Lyrics', 'The Weekend', 'The Weekend', 'IDK')");
 
 	}
 	catch (sql::SQLException e)
 	{
-		cout << "Error message: " << e.what() << endl;
+		cout << "Rools Error message: " << e.what() << endl;
 
 	}
 
@@ -71,7 +74,7 @@ void addinfo3(sql::Statement* stmt, sql::ResultSet* res)
 	}
 	catch (sql::SQLException e)
 	{
-		cout << "Error message: " << e.what() << endl;
+		cout << "Song Info Error message: " << e.what() << endl;
 
 	}
 
@@ -122,10 +125,10 @@ int main()
 	if (con->isValid())
 	{
 
-			addinfo(stmt, res);
-			addinfo1(stmt, res);
-			addinfo2(stmt, res);
-			addinfo3(stmt, res);
+		addinfo(stmt, res);
+		addinfo1(stmt, res);
+		addinfo2(stmt, res);
+		addinfo3(stmt, res);
 
 
 
