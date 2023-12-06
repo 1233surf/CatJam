@@ -24,8 +24,7 @@ void addinfo(sql::Statement* stmt, sql::ResultSet* res)
 	catch (sql::SQLException e)
 	{
 		cout << "Error message: " << e.what() << endl;
-		system("pause");
-		exit(1);
+
 	}
 
 }
@@ -43,8 +42,7 @@ void addinfo1(sql::Statement* stmt, sql::ResultSet* res)
 	catch (sql::SQLException e)
 	{
 		cout << "Error message: " << e.what() << endl;
-		system("pause");
-		exit(1);
+
 	}
 
 }
@@ -61,8 +59,7 @@ void addinfo2(sql::Statement* stmt, sql::ResultSet* res)
 	catch (sql::SQLException e)
 	{
 		cout << "Error message: " << e.what() << endl;
-		system("pause");
-		exit(1);
+
 	}
 
 }
@@ -78,8 +75,7 @@ void addinfo3(sql::Statement* stmt, sql::ResultSet* res)
 	catch (sql::SQLException e)
 	{
 		cout << "Error message: " << e.what() << endl;
-		system("pause");
-		exit(1);
+
 	}
 
 }
