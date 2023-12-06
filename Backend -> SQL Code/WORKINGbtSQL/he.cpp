@@ -19,8 +19,6 @@ void addinfo(sql::Statement* stmt, sql::ResultSet* res)
 
 		stmt->execute("USE sys");
 		res = stmt->executeQuery("INSERT INTO customerinfo (CustomerID, CustomerFirstName, CustomerLastName, CustomerEmail, CustomerUserName, CustomerPassword) VALUES ('1', 'Rachel' , 'Parker', 'IloveThisClass@JK.com', 'FakeName', 'FakePassword')");
-		stmt->execute("USE sys");
-		res = stmt->executeQuery("INSERT INTO employeeinfo (EmployeeNumber, EmployeeFirstName, EmployeeLastName, EmployeeEmail, EployeeUserName, EmployeePassword) VALUES ('1', 'Aaron' , 'Loveland', 'Imtired@reallytired', 'NameisFake', 'PasswordIsTo')");
 
 	}
 	catch (sql::SQLException e)
@@ -29,7 +27,7 @@ void addinfo(sql::Statement* stmt, sql::ResultSet* res)
 		system("pause");
 		exit(1);
 	}
-/*
+
 }
 void addinfo1(sql::Statement* stmt, sql::ResultSet* res)
 {
@@ -50,7 +48,41 @@ void addinfo1(sql::Statement* stmt, sql::ResultSet* res)
 	}
 
 }
-*/
+void addinfo2(sql::Statement* stmt, sql::ResultSet* res)
+{
+	try
+	{
+
+		stmt->execute("USE sys");
+		res = stmt->executeQuery("INSERT INTO rools (RoolsID, RoolsName, RoolsEmail, RoolsQeury) VALUES ('1', 'Customer' , 'Rools@email.com', 'no')");
+		res = stmt->executeQuery("INSERT INTO songinfo (SongInfoID, SongInfoName, SongInfoLyric, SongAlbum, SongArtist, SongProducer) VALUES ('1', 'Binding Lights' , 'Lyrics', 'The Weekend', 'The Weekend', 'IDK')");
+
+	}
+	catch (sql::SQLException e)
+	{
+		cout << "Error message: " << e.what() << endl;
+		system("pause");
+		exit(1);
+	}
+
+}
+void addinfo3(sql::Statement* stmt, sql::ResultSet* res)
+{
+	try
+	{
+
+		stmt->execute("USE sys");
+		res = stmt->executeQuery("INSERT INTO songinfo (SongInfoID, SongInfoName, SongInfoLyric, SongAlbum, SongArtist, SongProducer) VALUES ('1', 'Binding Lights' , 'Lyrics', 'The Weekend', 'The Weekend', 'IDK')");
+
+	}
+	catch (sql::SQLException e)
+	{
+		cout << "Error message: " << e.what() << endl;
+		system("pause");
+		exit(1);
+	}
+
+}
 int main()
 {
 	sql::Driver* driver;
@@ -98,7 +130,10 @@ int main()
 	{
 
 			addinfo(stmt, res);
-			//addinfo1(stmt, res);
+			addinfo1(stmt, res);
+			addinfo2(stmt, res);
+			addinfo3(stmt, res);
+
 
 
 	}
